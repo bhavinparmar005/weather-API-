@@ -1,0 +1,58 @@
+ <form class="search_main">
+                <div class="search_input">
+                    <input type="text" placeholder="Search City" id="search_city">
+
+                </div>
+                <div class="search_button">
+                    <button type="submit" id="search_button">
+                        <div class="search_icon">
+                            <img src="./Assest/ICONS/magnifying-glass-solid.svg" alt="search_icon">
+                        </div>
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="weather_img_main">
+                <div class="weather_img">
+                    <img src="./white-sun-with-small-cloud.svg " alt="">
+                </div>
+
+            </div>
+
+            <div class="celsius_display">
+                <h1> 29.73<sup>o</sup>c</h1>
+            </div>
+
+            <div class="city_name">
+                <p>New York</p>
+
+            </div>
+
+            <div class="humidity_and_windSpeed_main">
+                <div class="humidity">
+                    <div class="humidity_icon">
+                        <img src="" alt="">
+                    </div>
+                    <div class="humidity_pre">
+                        <h3>64%</h3> 
+                        <p>Humidity</p>
+                    </div>
+
+                </div>
+
+                <div class="wind_speed_main">
+                    <div class="wind_speed_icon">
+                          <img src="" alt="">
+                    </div>
+
+                    <div class="wind_speed_text">
+                        <h3>3.63 km/h</h3> 
+                        <p>Wind Speed</p>
+                    </div>
+
+                </div>
+
+
+            </div> 
