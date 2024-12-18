@@ -1,20 +1,20 @@
 let searchBotton = document.getElementById("search_button");
 let apiKey = "094b1cddc40a67c426c17b4f56de2b4d";
-let div =document.querySelector('.container');
+let div = document.querySelector('.container');
 let defaultCity = "Amreli";
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=metric`)
-.then(defaultRes => defaultRes.json())
-.then((finalRes) => {
-    console.log(
-                `
+    .then(defaultRes => defaultRes.json())
+    .then((finalRes) => {
+        console.log(
+            `
                             celsius    :- ${finalRes.main.temp}c
                             city       :- ${finalRes.name}
                             humidity   :- ${finalRes.main.humidity}%
                             wind speed :- ${finalRes.wind.speed}Km/h
-                            `
-              );
-    div.innerHTML = `
+                 `
+        );
+        div.innerHTML = `
             <form class="search_main" id="search_main">
                 <div class="search_input">
                     <input type="text" placeholder="Search City" id="search_city">
@@ -76,30 +76,30 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${
 
     
     `
-})
+    })
 
-function searchData(){
+function searchData() {
 
     let form = document.getElementById('search_main');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         let userInput = document.getElementById("search_city");
-      let city = userInput.value.trim();
-      if (city === "") {
-        alert("Please enter a city name");
-      }
-      else{
-        async function getData() {
-            try {
-              let response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-              );
-        
-              let finalResult = await response.json();
-      
-              div.innerHTML = ""
-    
-              div.innerHTML = `
+        let city = userInput.value.trim();
+        if (city === "") {
+            alert("Please enter a city name");
+        }
+        else {
+            async function getData() {
+                try {
+                    let response = await fetch(
+                        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+                    );
+
+                    let finalResult = await response.json();
+
+                    div.innerHTML = ""
+
+                    div.innerHTML = `
               <form class="search_main" id="search_main">
                   <div class="search_input">
                       <input type="text" placeholder="Search City" id="search_city">
@@ -161,25 +161,25 @@ function searchData(){
     
       
       `
-console.log(
-                `
+                    console.log(
+                        `
                             celsius    :- ${finalResult.main.temp}c
                             city       :- ${finalResult.name}
                             humidity   :- ${finalResult.main.humidity}%
                             wind speed :- ${finalResult.wind.speed}Km/h
                             `
-              );
-            } catch (error) {
-              console.log("error");
+                    );
+                } catch (error) {
+                    console.log("error");
+                }
             }
-          }
-        
-          getData();
-        
-      }
-    
-      
-    
-    
+
+            getData();
+
+        }
+
+
+
+
     });
 }
